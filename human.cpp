@@ -1,26 +1,27 @@
 #include "human.hpp"
 #include <iomanip>
+using namespace std;
 
-Human::Human(const std::string& first, const std::string& last, 
-             float score, int aptitude, const std::string& sector)
+Human::Human(const string& first, const string& last, 
+             float score, int aptitude, const string& sector)
     : CrewMember(first, last, score, aptitude), homeSector(sector) {}
 
-std::string Human::getHomeSector() const { return homeSector; }
+string Human::getHomeSector() const { return homeSector; }
 
-void Human::setHomeSector(const std::string& sector) {
+void Human::setHomeSector(const string& sector) {
     homeSector = sector;
 }
 
 void Human::display() const {
-    std::cout << *this;
+    cout << *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Human& human) {
+ostream& operator<<(ostream& os, const Human& human) {
     os << "Human Crew Member:\n"
        << "  ID: " << human.id << "\n"
        << "  Name: " << human.firstName << " " << human.lastName << "\n"
        << "  Home Sector: " << human.homeSector << "\n"
-       << "  Training Score: " << std::fixed << std::setprecision(1) << human.trainingScore << "\n"
+       << "  Training Score: " << fixed << setprecision(1) << human.trainingScore << "\n"
        << "  Mission Aptitude: " << human.missionAptitude << "\n";
     return os;
 }
