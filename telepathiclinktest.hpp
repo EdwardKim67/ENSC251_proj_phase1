@@ -14,18 +14,17 @@ private:
 public:
     TelepathicLinkTest(int signal, int cognitive, int empathic, int resistance);
     
-    // Getters
+    // accessor function (getter)
     int getSignalStrength() const;
     int getCognitiveLink() const;
     int getEmpathicOverlay() const;
     int getCognitiveResistance() const;
     int getTotal() const;
 
-    // Setters with validation
+    // mutator function (setter)
     void setSignalStrength(int strength);
     void setCognitiveLink(int link);
     void setEmpathicOverlay(int overlay);
     void setCognitiveResistance(int resistance);
 };
-
 #endif
